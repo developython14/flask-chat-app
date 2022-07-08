@@ -8,7 +8,7 @@ def hello_world():
 
 
 @app.route("/start")
-def hello_world():
+def start():
     return render_template('start.html')
 
 
