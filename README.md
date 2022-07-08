@@ -1,4 +1,6 @@
 # Flask chat app 
+Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :joy:
+
 
 # project description and details 
 **in this projects i will try to implement a complete chat sysytem work in web browser and provide an api for mobile devices to use it with flutter including the following features :**
@@ -34,10 +36,7 @@ That is so funny! :joy:
 
 
 
-	| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+
 
 
 [title](https://www.example.com)
