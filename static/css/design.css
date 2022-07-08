@@ -25,6 +25,13 @@
 
 
 .total {
-    display: grid;
-    grid-column: 50px auto;
+    background-color: rgb(221, 217, 224);
+    padding-top:20px ;
+    padding-bottom:20px ;
+}
+
+.int {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
