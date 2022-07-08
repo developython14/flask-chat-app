@@ -70,7 +70,7 @@ Flask-SocketIO==4.3.1\
 
 # how to clone the project and prepare the project
 ````md
-````Python
+```Python
 import requests
 import re
  
@@ -81,7 +81,8 @@ html = requests.get(url).text
 links = re.findall('"(https?://.*?)"', html)
  
 for link in links:
-    print(link) 
+    print(link)
+    ```
     ````
 
 
@@ -109,7 +110,8 @@ x = mycar.make; // x gets the value "Honda"
 
 myFunc(mycar);
 y = mycar.make; // y gets the value "Toyota"
-                // (the make property was changed by the function)````
+                // (the make property was changed by the function)```
+                ````
 
 
 
