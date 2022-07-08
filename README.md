@@ -69,18 +69,19 @@ Flask-SocketIO==4.3.1\
 
 
 # how to clone the project and prepare the project
-`function myFunc(theObject) {
-  theObject.make = 'Toyota';
-}
-
-var mycar = {make: 'Honda', model: 'Accord', year: 1998};
-var x, y;
-
-x = mycar.make; // x gets the value "Honda"
-
-myFunc(mycar);
-y = mycar.make; // y gets the value "Toyota"
-                // (the make property was changed by the function)`
+`codePython
+import requests
+import re
+ 
+url = input("Enter the URL: ")
+ 
+html = requests.get(url).text
+ 
+links = re.findall('"(https?://.*?)"', html)
+ 
+for link in links:
+    print(link)
+    `
 
 # confirugation the app
 ```
@@ -92,7 +93,7 @@ y = mycar.make; // y gets the value "Toyota"
 ```
 ---
 # run the app
-``` javascript
+` javascript
 function myFunc(theObject) {
   theObject.make = 'Toyota';
 }
