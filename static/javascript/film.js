@@ -22,10 +22,11 @@ function put(data){
 
 
 
-function changegrid(data){
-    var sel = document.querySelector('#exampleInputEmail1');
-    console.log(sel.value);
-
+function changegrid(){
+    var data = document.querySelector('#exampleInputEmail1');
+    var sel = document.querySelector('.data');
+    console.log(typeof data.value);
+    sel.innerHTML = data.value;
 }
 
 
