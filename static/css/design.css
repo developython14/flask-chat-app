@@ -1,0 +1,16 @@
+.musta {
+    color: brown;
+    width: 200;
+    height: 300;
+    background-color: blue;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+
+@keyframes example {
+    from {background-color: blue;}
+    to {background-color: yellow;}
+
+  }
