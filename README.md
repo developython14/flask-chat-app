@@ -41,38 +41,47 @@ Flask-Dance==5.1.0\
 Flask-Mail==0.9.1\
 PyMongo[srv]\
 Flask-PyMongo==2.3.0\
-Flask-Bcrypt==0.7.1
-Flask-WTF==1.0.0
-idna==3.3
-importlib-metadata==4.10.1
-itsdangerous==2.0.1
-Jinja2==3.0.3
-MarkupSafe==2.0.1
-oauthlib==3.2.0
-pycparser==2.21
-pymongo==4.0.1
-requests==2.27.1
-requests-oauthlib==1.3.1
+Flask-Bcrypt==0.7.1\
+Flask-WTF==1.0.0\
+idna==3.3\
+importlib-metadata==4.10.1\
+itsdangerous==2.0.1\
+Jinja2==3.0.3\
+MarkupSafe==2.0.1\
+oauthlib==3.2.0\
+pycparser==2.21\
+pymongo==4.0.1\
+requests==2.27.1\
+requests-oauthlib==1.3.1\
 six==1.16.0
-typing-extensions==4.0.1
-urllib3==1.26.8
-URLObject==2.4.3
-visitor==0.1.3
-Werkzeug==2.0.2
-WTForms==3.0.1
-zipp==3.7.0
-gunicorn
-ordereddict
-python-socketio==4.6.0
+typing-extensions==4.0.1\
+urllib3==1.26.8\
+URLObject==2.4.3\
+visitor==0.1.3\
+Werkzeug==2.0.2\
+WTForms==3.0.1\
+zipp==3.7.0\
+gunicorn\
+ordereddict\
+python-socketio==4.6.0\
 python-engineio==3.13.2
-Flask-SocketIO==4.3.1
+Flask-SocketIO==4.3.1\
 
-	---
 
 # how to clone the project and prepare the project
-`code`
+`function myFunc(theObject) {
+  theObject.make = 'Toyota';
+}
 
-	---
+var mycar = {make: 'Honda', model: 'Accord', year: 1998};
+var x, y;
+
+x = mycar.make; // x gets the value "Honda"
+
+myFunc(mycar);
+y = mycar.make; // y gets the value "Toyota"
+                // (the make property was changed by the function)`
+
 # confirugation the app
 ```
 {
@@ -81,7 +90,7 @@ Flask-SocketIO==4.3.1
   "age": 25
 }
 ```
-	---
+---
 # run the app
 
 `code`
