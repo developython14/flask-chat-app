@@ -105,14 +105,6 @@ x = mycar.make; // x gets the value "Honda"
 myFunc(mycar);
 y = mycar.make; // y gets the value "Toyota"
                 // (the make property was changed by the function)`
-
-# confirugation the app
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
 ```
 
 
