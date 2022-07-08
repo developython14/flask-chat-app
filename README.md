@@ -17,20 +17,63 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
 - modern design
 - provide api for flutter part
 
-
+	---
 # contenent 
-1. [title](https://www.example.com)
-2. [title](https://www.example.com)
-3. [title](https://www.example.com)
-4. [title](https://www.example.com)
-5. [title](https://www.example.com)
-6. [title](https://www.example.com)
+1. [required packages](https://www.example.com)
+2. [how to clone the project and prepare the project](https://www.example.com)
+3. [confirugation the app](https://www.example.com)
+4. [run the app ](https://www.example.com)
 
 
 
+	---
+# required packages 
+blinker==1.4
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.11
+click==8.0.3
+colorama==0.4.4
+dominate==2.6.0
+Flask==2.0.2
+Flask-Bootstrap==3.3.7.1
+Flask-Dance==5.1.0
+Flask-Mail==0.9.1
+PyMongo[srv]
+Flask-PyMongo==2.3.0
+Flask-Bcrypt==0.7.1
+Flask-WTF==1.0.0
+idna==3.3
+importlib-metadata==4.10.1
+itsdangerous==2.0.1
+Jinja2==3.0.3
+MarkupSafe==2.0.1
+oauthlib==3.2.0
+pycparser==2.21
+pymongo==4.0.1
+requests==2.27.1
+requests-oauthlib==1.3.1
+six==1.16.0
+typing-extensions==4.0.1
+urllib3==1.26.8
+URLObject==2.4.3
+visitor==0.1.3
+Werkzeug==2.0.2
+WTForms==3.0.1
+zipp==3.7.0
+gunicorn
+ordereddict
+python-socketio==4.6.0
+python-engineio==3.13.2
+Flask-SocketIO==4.3.1
 
+	---
 
+# how to clone the project and prepare the project
+`code`
 
+	---
+# confirugation the app
 ```
 {
   "firstName": "John",
@@ -38,6 +81,12 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
   "age": 25
 }
 ```
+	---
+# run the app
+
+`code`
+
+
 
 
 
