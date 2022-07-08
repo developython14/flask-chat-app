@@ -28,13 +28,12 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
   "age": 25
 }
 ```
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
 
-- [x] Write the press release
-- [musta] Update the website
-- [ ] Contact the media
-
-
-
+https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white
 
 
 
