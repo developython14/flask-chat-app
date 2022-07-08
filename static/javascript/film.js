@@ -22,8 +22,10 @@ function put(data){
 
 
 
-function mustapha(){
-   console.log('hi mustapha belkassme');
+function changegrid(data){
+    var sel = document.querySelector('#exampleInputEmail1');
+    console.log(sel.value);
+
 }
 
 
