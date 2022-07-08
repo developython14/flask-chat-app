@@ -82,8 +82,8 @@ links = re.findall('"(https?://.*?)"', html)
  
 for link in links:
     print(link)
-    ```
-    ````
+```
+````
 
 
 # confirugation the app
@@ -110,8 +110,9 @@ x = mycar.make; // x gets the value "Honda"
 
 myFunc(mycar);
 y = mycar.make; // y gets the value "Toyota"
-                // (the make property was changed by the function)```
-                ````
+                // (the make property was changed by the function)
+```
+````
 
 
 
