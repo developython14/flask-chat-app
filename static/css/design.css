@@ -14,20 +14,21 @@
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     justify-items: center;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .flag{
     width: 100px;
-    height: 100px;
+    height: 60px;
     overflow: hidden;    
     border-radius: 20px;
 
 }
 .countryname{
-
+margin-left: 50px;
 }
 
 img{
