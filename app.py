@@ -12,5 +12,10 @@ def filter_api():
     return render_template('filter_api.html')
 
 
+@app.route("/filter_with_ajax")
+def filter_with_ajax():
+    return render_template('filter_with_ajax.html')
+
+
 if __name__ == '__main__' :
     app.run()
