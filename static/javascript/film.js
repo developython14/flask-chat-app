@@ -23,11 +23,10 @@ function put(data){
 
 
 async function changegrid() {
-    var _filter = document.querySelector('#exampleInputEmail1');
     var sel = document.querySelector('.data');
     const response = await fetch(api_url);
-    const data = await response.json();
-    data = data.filter(checkAdult(_filter));
+    var data = await response.json();
+    data = data.filter(checkAdult);
     sel.innerHTML = '';
     for (let element of data) {
         sel.innerHTML = sel.innerHTML+  `<div class="card" style="width: 18rem;">
@@ -40,8 +39,9 @@ async function changegrid() {
     }
 }
 
-function checkAdult(carch,par) {
-    return carch.name >= par;
+function checkAdult(car) {
+    var _filter = document.querySelector('#exampleInputEmail1').value;
+    return  car.name.toUpperCase().includes(_filter.toUpperCase()) ;
   }
 
 
