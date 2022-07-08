@@ -33,7 +33,6 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 
-https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white
 
 
 
