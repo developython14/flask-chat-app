@@ -22,5 +22,9 @@ function put(data){
 
 
 
+function mustapha(){
+   console.log('hi mustapha belkassme');
+}
+
 
 getdata();
