@@ -22,12 +22,27 @@ function put(data){
 
 
 
-function changegrid(){
-    var data = document.querySelector('#exampleInputEmail1');
+async function changegrid() {
+    var _filter = document.querySelector('#exampleInputEmail1');
     var sel = document.querySelector('.data');
-    console.log(typeof data.value);
-    sel.innerHTML = data.value;
+    const response = await fetch(api_url);
+    const data = await response.json();
+    data = data.filter(checkAdult(_filter));
+    sel.innerHTML = '';
+    for (let element of data) {
+        sel.innerHTML = sel.innerHTML+  `<div class="card" style="width: 18rem;">
+        <img src="${element.img}" class="card-img-top" alt="image not appear">
+        <div class="card-body">
+          <h5 class="card-title">${element.name}</h5>
+          <h5 class="card-title">${element.nickname}</h5>
+        </div>
+      </div>`
+    }
 }
+
+function checkAdult(carch,par) {
+    return carch.name >= par;
+  }
 
 
 getdata();
