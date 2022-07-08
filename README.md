@@ -93,9 +93,9 @@ y = mycar.make; // y gets the value "Toyota"
 ---
 # run the app
 
-`function myFunc(theObject) {\
+```function myFunc(theObject) {
   theObject.make = 'Toyota';
-}`
+}```
 
 
 
