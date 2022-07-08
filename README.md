@@ -19,9 +19,7 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
 
 
 
-`def my_function():
-  print("Hello from a function")
-`
+
 
 ```
 {
@@ -32,10 +30,9 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
 ```
 
 - [x] Write the press release
-- [ ] Update the website
+- [musta] Update the website
 - [ ] Contact the media
 
-That is so funny! :joy:
 
 
 
