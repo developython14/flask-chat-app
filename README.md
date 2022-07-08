@@ -96,7 +96,11 @@ ____
 ```
 
 
+
+
 ____
+# Run the app
+
 ```JavaScript
 function myFunc(theObject) {
   theObject.make = 'Toyota';
