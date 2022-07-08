@@ -7,9 +7,9 @@ def hello_world():
     return "<p>Hello Mustapha!</p>"
 
 
-@app.route("/start")
-def start():
-    return render_template('start.html')
+@app.route("/filter_api")
+def filter_api():
+    return render_template('filter_api.html')
 
 
 if __name__ == '__main__' :
