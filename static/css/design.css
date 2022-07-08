@@ -1,22 +1,26 @@
 .musta {
     color: brown;
-    width: 200;
-    height: 300;
-    background-color: blue;
-    animation-name: example;
-    animation-duration: 5s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-    left: 0;
-    position: relative;
-
+    width: 50%;
+    height: 60;
+    background-color: #0000ff;
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20;
+    padding-bottom: 20;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
-@keyframes example {
-    from {background-color: blue;}
-    to {background-color: yellow;}
-    from {left: 0;}
-    to {left: 300;}
+.flag{
 
-  }
+}
+.countryname{
+
+}
