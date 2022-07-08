@@ -22,3 +22,9 @@
     width: 100%;
     height: 200px;
 }
+
+
+.total {
+    display: grid;
+    grid-column: 50px auto;
+}
