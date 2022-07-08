@@ -28,19 +28,19 @@ Live Test : [quicko](https://www.example.com) inchallah it will be  so funny! :j
 
 	---
 # required packages 
-blinker==1.4
-certifi==2021.10.8
-cffi==1.15.0
-charset-normalizer==2.0.11
-click==8.0.3
-colorama==0.4.4
-dominate==2.6.0
-Flask==2.0.2
-Flask-Bootstrap==3.3.7.1
-Flask-Dance==5.1.0
-Flask-Mail==0.9.1
-PyMongo[srv]
-Flask-PyMongo==2.3.0
+blinker==1.4\
+certifi==2021.10.8\
+cffi==1.15.0\
+charset-normalizer==2.0.11\
+click==8.0.3\
+colorama==0.4.4\
+dominate==2.6.0\
+Flask==2.0.2\
+Flask-Bootstrap==3.3.7.1\
+Flask-Dance==5.1.0\
+Flask-Mail==0.9.1\
+PyMongo[srv]\
+Flask-PyMongo==2.3.0\
 Flask-Bcrypt==0.7.1
 Flask-WTF==1.0.0
 idna==3.3
