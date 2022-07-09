@@ -17,7 +17,7 @@ $(function() {
 
 
 $(function() {
-  $('button#fliterdata').bind('click', function() {
+  $('#fliterdata').bind('click', function() {
     console.log("mustapha work fine");
   });
 });
