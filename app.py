@@ -23,5 +23,10 @@ def add_numbers():
     b = request.args.get('b', 0)
     return jsonify(result=a + b)
 
+@app.route('/words')
+def add_numbers():
+    a = request.args.get('mustapha', 0)
+    return jsonify(result=a.capitalize)
+
 if __name__ == '__main__' :
     app.run()

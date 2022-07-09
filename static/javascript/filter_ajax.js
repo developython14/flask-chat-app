@@ -3,7 +3,6 @@
 
 $(function() {
   $('a#calculate').bind('click', function() {
-    console.log("mustapha work fine");
     $.getJSON( '/_add_numbers', {
       a: $('input[name="a"]').val(),
       b: $('input[name="b"]').val()
@@ -18,6 +17,11 @@ $(function() {
 
 $(function() {
   $('#fliterdata').bind('click', function() {
-    console.log("mustapha work fine");
+    $.getJSON( '/words', {
+      a: $('input[name="mustapha"]').val(),
+    }, function(data) {
+      $("#free").text(data.result);
+    });
+    return false;
   });
 });
