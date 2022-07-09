@@ -19,8 +19,8 @@ def filter_with_ajax():
 
 @app.route('/_add_numbers')
 def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
+    a = request.args.get('a', 0)
+    b = request.args.get('b', 0)
     return jsonify(result=a + b)
 
 if __name__ == '__main__' :
