@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,jsonify
+from flask import Flask,render_template,request,jsonify,url_for
 
 app = Flask(__name__)
 
@@ -25,8 +25,11 @@ def add_numbers():
 
 @app.route('/words')
 def turnwords():
-    a = request.args.get('mustapha', 0)
-    return jsonify(result=a.capitalize)
+    a = request.args.get('a')
+    url_img = url_for('static', filename='images/algeriaflag.jpg')
+    print("bella bella")
+    print(url_img)
+    return jsonify(result=url_img)
 
 if __name__ == '__main__' :
     app.run()

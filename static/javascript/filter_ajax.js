@@ -20,7 +20,7 @@ $(function() {
     $.getJSON( '/words', {
       a: $('input[name="mustapha"]').val(),
     }, function(data) {
-      $("#free").text(data.result);
+      $(".newimg").attr("src", "${data.result}");
     });
     return false;
   });
