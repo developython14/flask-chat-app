@@ -24,7 +24,7 @@ def add_numbers():
     return jsonify(result=a + b)
 
 @app.route('/words')
-def add_numbers():
+def turnwords():
     a = request.args.get('mustapha', 0)
     return jsonify(result=a.capitalize)
 
