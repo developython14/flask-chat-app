@@ -20,8 +20,15 @@ $(function() {
     $.getJSON( '/words', {
       a: $('input[name="mustapha"]').val(),
     }, function(data) {
-      $(".newimg").attr("src", "${data.result}");
+      $(".newimg").attr("src", ".."+data.result);
     });
     return false;
   });
 });
+
+var socket = io();
+socket.on('connect', function() {
+    socket.emit('my event', {data: 'I\'m mustapha!'});
+});
+
+

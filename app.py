@@ -1,6 +1,12 @@
 from flask import Flask,render_template,request,jsonify,url_for
+from flask_socketio import SocketIO
+
+
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
+
 
 @app.route("/")
 def hello_world():
@@ -31,5 +37,15 @@ def turnwords():
     print(url_img)
     return jsonify(result=url_img)
 
+def messageReceived(methods=['GET', 'POST']):
+    print('message was received!!!')
+
+@socketio.on('my event')
+def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('my response', json, callback=messageReceived)
+
+
+
 if __name__ == '__main__' :
-    app.run()
+    socketio.run(app)
