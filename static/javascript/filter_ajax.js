@@ -38,7 +38,7 @@ socket.on( 'my response', function( msg ) {
 
 socket.on( 'message draw', function( msg ) {
   let frame = document.querySelector('.list-group');
-  var li = '<li class="list-group-item">${msg}</li>';
-  frame.innerHTML = frame.innerHTML + 'mustapha you are bigger';
+  var li = `<li class="list-group-item">${msg}</li>`;
+  frame.innerHTML = frame.innerHTML + li;
   console.log( msg );
 })
