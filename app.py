@@ -30,13 +30,6 @@ def add_numbers():
     b = request.args.get('b', 0,type=float)
     return jsonify(result=a + b)
 
-@app.route('/words')
-def turnwords():
-    a = request.args.get('a')
-    url_img = url_for('static', filename='images/algeriaflag.jpg')
-    print("bella bella")
-    print(url_img)
-    return jsonify(result=url_img)
 
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
