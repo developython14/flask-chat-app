@@ -1,3 +1,4 @@
+from tokenize import Double
 from flask import Flask,render_template,request,jsonify,url_for
 from flask_socketio import SocketIO
 
@@ -25,8 +26,8 @@ def filter_with_ajax():
 
 @app.route('/_add_numbers')
 def add_numbers():
-    a = request.args.get('a', 0)
-    b = request.args.get('b', 0)
+    a = request.args.get('a', 0 ,type=float)
+    b = request.args.get('b', 0,type=float)
     return jsonify(result=a + b)
 
 @app.route('/words')

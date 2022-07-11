@@ -28,6 +28,7 @@ $(function() {
 
 var socket = io();
 socket.on('connect', function() {
+  console.log("mustapha rak tetcall function ");
     socket.emit('my event', {data: 'I\'m mustapha!'});
 });
 
