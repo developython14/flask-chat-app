@@ -14,8 +14,7 @@ $(function() {
 });
 
 
-
-
+let message_colors=document.querySelector('.colors').value ;
 
 var socket = io();
 socket.on('connect', function() {
@@ -38,7 +37,7 @@ socket.on( 'my response', function( msg ) {
 
 socket.on( 'message draw', function( msg ) {
   let frame = document.querySelector('.list-group');
-  var li = `<li class="list-group-item">${msg}</li>`;
+  var li = `<li class="list-group-item" style="background-color:${message_colors} ;">${msg}</li>`;
   frame.innerHTML = frame.innerHTML + li;
   console.log( msg );
 })
