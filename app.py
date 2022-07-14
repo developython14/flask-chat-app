@@ -14,6 +14,11 @@ def hello_world():
     return "<p>Hello tomahook!</p>"
 
 
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
+
+
 @app.route("/filter_api")
 def filter_api():
     return render_template('filter_api.html')
