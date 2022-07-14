@@ -52,7 +52,6 @@ $(function() {
   $('button#fliterdata').bind('click', function() {
     $.getJSON(api_url+$('input[name="mustapha"]').val(), {
     }, function(data) {
-      console.log('return function called');
       var sel = document.querySelector('.data');
       sel.innerHTML = '';
       for (let element of data) {
