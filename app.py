@@ -26,7 +26,8 @@ def filter_with_ajax():
 
 @app.route('/_add_numbers')
 def add_numbers():
-    a = request.args.get('a', 0 ,type=float)
+    a = request.args.get('a', 0 ,type=int)
+    print("mystapha hada a ",a)
     print(factorial(a))
     return jsonify(result=a)
 
