@@ -50,10 +50,20 @@ getdata();
 
 $(function() {
   $('button#fliterdata').bind('click', function() {
-    $.getJSON('/_add_numbers', {
-      a:$('input[name="mustapha"]').val(),
+    $.getJSON(api_url, {
+      name:$('input[name="mustapha"]').val(),
     }, function(data) {
-      $('.p').text(data.result);  });
+      console.log('return function called');
+      var sel = document.querySelector('.data');
+      sel.innerHTML = '';
+      for (let element of data) {
+          sel.innerHTML = sel.innerHTML+  `<div class="card" style="width: 18rem;">
+          <img src="${element.img}" class="card-img-top" alt="image not appear">
+          <div class="card-body">
+            <h5 class="card-title">${element.name}</h5>
+            <h5 class="card-title">${element.nickname}</h5>
+          </div>
+        </div>`}});
     return false;
   });
 });
