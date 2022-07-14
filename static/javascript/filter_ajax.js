@@ -51,7 +51,7 @@ getdata();
 $(function() {
   $('button#fliterdata').bind('click', function() {
     $.getJSON('/_add_numbers', {
-      a:'mustapha belkassem',
+      a:$('input[name="mustapha"]').val(),
     }, function(data) {
       $('.p').text(data.result);  });
     return false;
