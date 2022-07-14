@@ -53,7 +53,7 @@ $(function() {
     $.getJSON('/_add_numbers', {
       a:'mustapha belkassem',
     }, function(data) {
-      console.log("request rerundde ");   });
+      $('.p').text(data.result);  });
     return false;
   });
 });

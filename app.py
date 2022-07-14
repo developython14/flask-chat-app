@@ -1,7 +1,7 @@
 from tokenize import Double
 from flask import Flask,render_template,request,jsonify,url_for
 from flask_socketio import SocketIO
-
+from math import * 
 
 
 app = Flask(__name__)
@@ -27,8 +27,8 @@ def filter_with_ajax():
 @app.route('/_add_numbers')
 def add_numbers():
     a = request.args.get('a', 0 ,type=float)
-    b = request.args.get('b', 0,type=float)
-    return jsonify(result=a + b)
+    print(factorial(a))
+    return jsonify(result=a)
 
 
 def messageReceived(methods=['GET', 'POST']):
