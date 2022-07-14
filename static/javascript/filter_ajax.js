@@ -63,6 +63,5 @@ $(function() {
             <h5 class="card-title">${element.nickname}</h5>
           </div>
         </div>`}});
-    return false;
   });
 });
