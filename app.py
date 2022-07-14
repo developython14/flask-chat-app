@@ -1,3 +1,4 @@
+from crypt import methods
 from tokenize import Double
 from flask import Flask,render_template,request,jsonify,url_for
 from flask_socketio import SocketIO
@@ -12,6 +13,13 @@ socketio = SocketIO(app)
 @app.route("/")
 def hello_world():
     return "<p>Hello tomahook!</p>"
+
+
+@app.route("/myapi" , methods=["GET"])
+def api():
+    fp = open(r"C:\Users\HA\Desktop\flask_chat\test.txt.txt", "r")
+    mus = fp.read()
+    return jsonify(result=mus)
 
 
 @app.route("/chat")
