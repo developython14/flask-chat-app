@@ -19,6 +19,6 @@ socket.on('connect', function() {
 
 
   socket.on( 'my response', function( msg ) {
-    console.log( msg )
-      $( '.list-group' ).append(  '<li class="list-group-item" style="background-color: red;">message from mustapha ({msg})</li>')
+    console.log( msg.user_name )
+      $( '.list-group' ).append( `<li class="list-group-item" style="background-color: ;">message from mustapha ${msg.user_name}</li>`)
   })
