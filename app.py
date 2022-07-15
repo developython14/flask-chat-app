@@ -1,5 +1,5 @@
 from tokenize import Double
-from flask import Flask,render_template,request,jsonify,url_for
+from flask import Flask,render_template,request,jsonify,url_for,redirect,session
 from flask_socketio import SocketIO
 from math import * 
 
@@ -15,13 +15,15 @@ def hello_world():
 
 
 
-@app.route("/introscreen")
+@app.route("/introscreen" ,methods=['GET', 'POST'] )
 def introscreen():
     if request.method == 'POST':
-        username = request.form['Username']
-        userid = request.form['UsernameId']
-        print("iicicici",username,username)
-    return render_template('intro_screen.html')
+        print("bien directed")
+        session['username'] = request.form['Username']
+        session['userid'] = request.form['UsernameId']
+        return redirect('/chat')
+    elif request.method == 'GET':
+        return render_template('intro_screen.html')
 
 @app.route("/chat" ,methods=['GET', 'POST'] )
 def chat():
