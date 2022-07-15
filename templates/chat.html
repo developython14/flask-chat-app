@@ -8,8 +8,22 @@
     <title>chat screen</title>
 </head>
 <body>
- <p>{{ session['username']  }}</p>
- <p>{{ session['userid']  }}</p>
+ <p>hada name {{ session['username']  }}</p>
+ <p> hada id {{ session['userid']  }}</p>
+    <ul class="list-group col-5">
+        <li class="list-group-item" style="background-color: red;">message from mustapha (gfdfgsggdgfdsgfds)</li>
+      </ul>
+    
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <script src="{{url_for('static', filename='javascript/chat.js')}}"></script>

@@ -41,11 +41,6 @@ def filter_with_ajax():
     return render_template('filter_with_ajax.html')
 
 
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a', 0 ,type=int)
-    a = factorial(a)
-    return jsonify(result=a)
 
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
