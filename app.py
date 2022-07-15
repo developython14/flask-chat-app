@@ -17,14 +17,16 @@ def hello_world():
 
 @app.route("/introscreen")
 def introscreen():
+    if request.method == 'POST':
+        username = request.form['Username']
+        userid = request.form['UsernameId']
+        print("iicicici",username,username)
     return render_template('intro_screen.html')
 
 @app.route("/chat" ,methods=['GET', 'POST'] )
 def chat():
     if request.method == 'GET':
         return render_template('chat.html')
-    elif request.method == 'Post':
-        return ''
 
 
 @app.route("/filter_api")
