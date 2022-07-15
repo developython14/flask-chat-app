@@ -10,8 +10,9 @@ socket.on('connect', function() {
       e.preventDefault()
       let message = $( 'input#exampleInputEmail1' ).val()
       let username = $( '.mus' ).text()
-      console.log(user_id)
+      let colch = $( '.col' ).text()
       socket.emit( 'my event', {
+        color:colch,
         message : message,
         username : username
       })
@@ -22,5 +23,5 @@ socket.on('connect', function() {
 
 
   socket.on( 'my response', function( msg ) {
-      $( '.list-group' ).append( `<li class="list-group-item" style="background-color: ;">message from  ${ msg.username }  contenant  ${msg.message}</li>`)
+      $( '.list-group' ).append( `<li class="list-group-item" style="background-color:${msg.color} ;">message from  ${ msg.username }  contenant  ${msg.message}</li>`)
   })

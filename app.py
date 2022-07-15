@@ -21,6 +21,7 @@ def introscreen():
         print("bien directed")
         session['username'] = request.form['Username']
         session['userid'] = request.form['UsernameId']
+        session['color'] = request.form['colorchoice']
         return redirect('/chat')
     elif request.method == 'GET':
         return render_template('intro_screen.html')
