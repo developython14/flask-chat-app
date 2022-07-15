@@ -19,9 +19,12 @@ def hello_world():
 def introscreen():
     return render_template('intro_screen.html')
 
-@app.route("/chat")
+@app.route("/chat" ,methods=['GET', 'POST'] )
 def chat():
-    return render_template('chat.html')
+    if request.method == 'GET':
+        return render_template('chat.html')
+    elif request.method == 'Post':
+        return ''
 
 
 @app.route("/filter_api")
