@@ -14,12 +14,10 @@ def hello_world():
     return "<p>Hello tomahook!</p>"
 
 
-@app.route("/myapi" , methods =["GET"])
-def api():
-    fp = open(r"C:\Users\HA\Desktop\flask_chat\test.txt.txt", "r")
-    mus = fp.read()
-    return jsonify(result=mus)
 
+@app.route("/introscreen")
+def introscreen():
+    return render_template('intro_screen.html')
 
 @app.route("/chat")
 def chat():
