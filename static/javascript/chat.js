@@ -8,12 +8,12 @@ socket.on('connect', function() {
     })
     var form = $( 'form' ).on( 'submit', function( e ) {
       e.preventDefault()
-      let user_name = $( 'input#exampleInputEmail1' ).val()
-      let user_id = $( '.mus' ).val()
+      let message = $( 'input#exampleInputEmail1' ).val()
+      let username = $( '.mus' ).text()
       console.log(user_id)
       socket.emit( 'my event', {
-        user_name : user_name,
-        userid : user_id
+        message : message,
+        username : username
       })
       $( 'input#exampleInputEmail1' ).val( '' ).focus()
     })
@@ -22,6 +22,5 @@ socket.on('connect', function() {
 
 
   socket.on( 'my response', function( msg ) {
-    console.log( msg.user_name )
-      $( '.list-group' ).append( `<li class="list-group-item" style="background-color: ;">message from  ${ msg.userid } ${msg.user_name}</li>`)
+      $( '.list-group' ).append( `<li class="list-group-item" style="background-color: ;">message from  ${ msg.username }  contenant  ${msg.message}</li>`)
   })
