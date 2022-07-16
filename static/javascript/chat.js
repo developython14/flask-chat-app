@@ -1,31 +1,35 @@
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 socket.on('connect', function() {
-    socket.emit( 'connection', {
-      msg: 'User Connected',
-      user_id:$( '.user_id' ).text(),
+    socket.emit('connection', {
+        msg: 'User Connected',
+        user_id: $('.user_id').text(),
     })
-    var form = $( '.msger-inputarea' ).on( 'submit', function( e ) {
-      e.preventDefault()
-      let message = $( 'input.msger-input' ).val()
-      let user_id =  $( '.user_id' ).text()
-      const currentDate = new Date();
-      socket.emit( 'my event', {
-        message : message,
-        date : currentDate.toString(),
-        user_id :user_id
-      })
-      $( 'input.msger-input' ).val( '' ).focus()
+    var form = $('.msger-inputarea').on('submit', function(e) {
+        e.preventDefault()
+        let message = $('input.msger-input').val()
+        let user_id = $('.user_id').text()
+        const currentDate = new Date();
+        socket.emit('my event', {
+            message: message,
+            date: currentDate.toString(),
+            user_id: user_id
+        })
+        $('input.msger-input').val('').focus()
+        let items = document.querySelectorAll(".msg");
+        last = items[items.length - 1];
+        last.scrollIntoView();
+        if (ref > 0) {
+            document.getElementsByClassName('msg').item(ref - 1).focus();
+        }
     })
-    var inn = $( 'input.msger-input' ).on( 'focus', function( e ) {
-      console.log('rah ykteb');
-            })
-  })
+    var inn = $('input.msger-input').on('focus', function(e) {})
+})
 
 
 
-  socket.on( 'my response', function( msg ) {
-        if (msg.user_id != $( '.user_id' ).text()){
-      $( '.msger-chat' ).append( `<div class="msg left-msg">
+socket.on('my response', function(msg) {
+    if (msg.user_id != $('.user_id').text()) {
+        $('.msger-chat').append(`<div class="msg left-msg">
       <div
        class="msg-img"
        style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"
@@ -42,9 +46,8 @@ socket.on('connect', function() {
         </div>
       </div>
     </div>`);
-    }
-    else {     
-      $( '.msger-chat' ).append(`<div class="msg right-msg">
+    } else {
+        $('.msger-chat').append(`<div class="msg right-msg">
       <div
        class="msg-img"
        style="background-image: url(https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?pid=ImgDet&rs=1)"
@@ -60,15 +63,12 @@ socket.on('connect', function() {
         ${msg.message}
         </div>
       </div>
-    </div>`);}
- 
-  })
+    </div>`);
+    }
 
-
-  socket.on( 'userconnect', function( msg ) {
-    console.log(msg);
 })
 
 
- 
-  
+socket.on('userconnect', function(msg) {
+    console.log(msg);
+})

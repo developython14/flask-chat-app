@@ -26,6 +26,9 @@ html {
     border-radius: 5px;
     background: var(--msger-bg);
     box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .msger-header {
@@ -166,7 +169,6 @@ html {
     grid-template-columns: 300px auto;
     margin: 20px;
     gap: 5px;
-    max-height: 600px;
 }
 
 .online {
@@ -181,4 +183,7 @@ html {
 
 .list-group {
     width: 300px;
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
