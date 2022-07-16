@@ -11,7 +11,7 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello tomahook!</p>"
+    return render_template('testing.html')
 
 
 
@@ -51,7 +51,10 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     socketio.emit('my response', json, callback=messageReceived)
 
-
+@socketio.on('connection')
+def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('userconnect', json, callback=messageReceived)
 
 if __name__ == '__main__' :
     socketio.run(app)
