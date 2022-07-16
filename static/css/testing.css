@@ -22,7 +22,6 @@ html {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    height: calc(100% - 50px);
     border: var(--border);
     border-radius: 5px;
     background: var(--msger-bg);
@@ -165,7 +164,9 @@ html {
 .navmess {
     display: grid;
     grid-template-columns: 300px auto;
-    width: 900px;
+    margin: 20px;
+    gap: 5px;
+    max-height: 600px;
 }
 
 .online {
