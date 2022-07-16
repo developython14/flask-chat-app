@@ -22,9 +22,6 @@ html {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
-    width: 100%;
-    max-width: 867px;
-    margin: 25px 10px;
     height: calc(100% - 50px);
     border: var(--border);
     border-radius: 5px;
@@ -167,7 +164,8 @@ html {
 
 .navmess {
     display: grid;
-    grid-template-columns: 30px auto;
+    grid-template-columns: 300px auto;
+    width: 900px;
 }
 
 .online {
@@ -178,4 +176,8 @@ html {
 .offline {
     color: red;
     font-weight: bold;
+}
+
+.list-group {
+    width: 300px;
 }
