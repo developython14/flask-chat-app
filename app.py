@@ -51,10 +51,6 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     socketio.emit('my response', json, callback=messageReceived)
 
-@socketio.on('messagebox')
-def handle_my_custom_event(msg, methods=['GET', 'POST']):
-    print('received messages: ' + str(msg))
-    socketio.emit('message draw', msg, callback=messageReceived)
 
 
 if __name__ == '__main__' :
