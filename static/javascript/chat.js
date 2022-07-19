@@ -74,3 +74,30 @@ socket.on('my response', function(msg) {
 socket.on('userconnect', function(msg) {
     console.log(msg);
 })
+
+
+
+
+const api_list_amis = 'https://www.breakingbadapi.com/api/characters';
+
+async function getdata() {
+    const response = await fetch(api_list_amis);
+    const data = await response.json();
+    put(data);
+}
+
+function put(data) {
+    console.log('funcrion start');
+    var sel = document.querySelector('.list-group')
+    for (let element of data) {
+        sel.innerHTML = sel.innerHTML + `<li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
+        <div class="col">
+            <div class="row">hacker etcih</div>
+            <div class="row online">
+                Online</div>
+        </div>
+        </li>`
+    }
+    console.log('funcrion start');
+
+}
