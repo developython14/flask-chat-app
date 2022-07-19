@@ -106,11 +106,18 @@ getdata();
 
 
 async function changegrid() {
-    var sel = document.querySelector('.data');
+    console.log('function called succefly');
+    var sel = document.querySelector('.list-group');
     const response = await fetch(api_list_amis);
     var data = await response.json();
     data = data.filter(checkAdult);
-    sel.innerHTML = '';
+    sel.innerHTML =
+        `<div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control" placeholder="Search?">
+        <button class="btn btn-primary" onclick="changegrid()">Search</button>
+    </div>`;
+    $('.form-control').val('salam');
     for (let element of data) {
         sel.innerHTML = sel.innerHTML + `<li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
         <div class="col">
@@ -123,6 +130,6 @@ async function changegrid() {
 }
 
 function checkAdult(car) {
-    var _filter = document.querySelector('#exampleInputEmail1').value;
+    var _filter = document.querySelector('.form-control').value;
     return car.name.toUpperCase().includes(_filter.toUpperCase());
 }
