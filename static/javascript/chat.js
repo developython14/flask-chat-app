@@ -8,11 +8,13 @@ socket.on('connect', function() {
         e.preventDefault()
         let message = $('input.msger-input').val()
         let user_id = $('.user_id').text()
+        let username = $('.username').text()
         const currentDate = new Date();
         socket.emit('my event', {
             message: message,
             date: currentDate.toString(),
-            user_id: user_id
+            user_id: user_id,
+            username: username,
         })
         $('input.msger-input').val('').focus()
         let items = document.querySelectorAll(".msg");
@@ -37,7 +39,7 @@ socket.on('my response', function(msg) {
 
       <div class="msg-bubble">
         <div class="msg-info">
-          <div class="msg-info-name">BOT</div>
+          <div class="msg-info-name">${msg.username}</div>
           <div class="msg-info-time">${msg.date.slice(16,21)}</div>
         </div>
 
@@ -55,7 +57,7 @@ socket.on('my response', function(msg) {
   
       <div class="msg-bubble">
         <div class="msg-info">
-          <div class="msg-info-name">Sajad</div>
+          <div class="msg-info-name">${msg.username}</div>
           <div class="msg-info-time">${msg.date.slice(16,21)}</div>
         </div>
   
