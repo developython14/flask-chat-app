@@ -87,7 +87,6 @@ async function getdata() {
 }
 
 function put(data) {
-    console.log('funcrion start');
     var sel = document.querySelector('.list-group')
     for (let element of data) {
         sel.innerHTML = sel.innerHTML + `<li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
@@ -98,6 +97,32 @@ function put(data) {
         </div>
         </li>`
     }
-    console.log('funcrion start');
 
+}
+
+getdata();
+
+
+
+
+async function changegrid() {
+    var sel = document.querySelector('.data');
+    const response = await fetch(api_list_amis);
+    var data = await response.json();
+    data = data.filter(checkAdult);
+    sel.innerHTML = '';
+    for (let element of data) {
+        sel.innerHTML = sel.innerHTML + `<li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
+        <div class="col">
+            <div class="row">algeria lageria  alge</div>
+            <div class="row online">
+                Online</div>
+        </div>
+        </li>`
+    }
+}
+
+function checkAdult(car) {
+    var _filter = document.querySelector('#exampleInputEmail1').value;
+    return car.name.toUpperCase().includes(_filter.toUpperCase());
 }
