@@ -2,15 +2,21 @@ from tokenize import Double
 from flask import Flask,render_template,request,jsonify,url_for,redirect,session
 from flask_socketio import SocketIO
 from math import * 
+from flask_bcrypt import Bcrypt
+from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
+bcrypt = Bcrypt(app)
 socketio = SocketIO(app)
-
+app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz4o7.mongodb.net/mustapha?retryWrites=true&w=majority"
+mongodb_client = PyMongo(app)
+db = mongodb_client.db
 
 @app.route("/")
 def hello_world():
+    db.messages.insert_one({'title': "todo title", 'body': "todo body"})
     return render_template('testing.html')
 
 
@@ -49,12 +55,20 @@ def messageReceived(methods=['GET', 'POST']):
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
+    db.messages.insert_one(json)
+    print('aperss',json)
     socketio.emit('my response', json, callback=messageReceived)
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     socketio.emit('userconnect', json, callback=messageReceived)
+
+@socketio.on('connection')
+def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
+    print('received my event: ' + str(json))
+    socketio.emit('userconnect', json, callback=messageReceived)
+
 
 if __name__ == '__main__' :
     socketio.run(app)
