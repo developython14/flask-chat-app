@@ -232,11 +232,20 @@ a:active {
     color: green;
 }
 
-.iden {
-    background-color: red;
-    color: #666;
+.list-group-item:hover {
+    background-color: rgb(89, 89, 241);
+    color: wheat;
 }
 
-.iden:hover {
-    background-color: #579ffb;
+.list-group-item:hover .status {
+    color: white;
+}
+
+.list-group-item:hover a {
+    color: white;
+}
+
+.status {
+    color: green;
+    font-weight: bold;
 }

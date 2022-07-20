@@ -119,7 +119,7 @@ async function changegrid() {
     document.querySelector('.form-control').value = ref;
     for (let element of data) {
         sel.innerHTML = sel.innerHTML + `<li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
-        <div class="col">
+        <div class="col d-flex">
             <div class="row">algeria lageria  alge</div>
             <div class="row online">
                 Online</div>
