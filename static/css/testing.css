@@ -246,3 +246,8 @@ a:active .iden {
     background-color: rgb(89, 89, 241);
     color: wheat;
 }
+
+.video_message {
+    width: 200px;
+    height: 200px;
+}
