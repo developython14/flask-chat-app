@@ -9,8 +9,10 @@ socket.on('connect', function() {
         let message = $('input.msger-input').val()
         let user_id = $('.user_id').text()
         let username = $('.username').text()
+        let roomname = document.domain;
         const currentDate = new Date();
         socket.emit('my event', {
+            roomname: roomname
             message: message,
             date: currentDate.toString(),
             user_id: user_id,
@@ -30,7 +32,7 @@ socket.on('connect', function() {
 
 
 socket.on('my response', function(msg) {
-    console.log(msg['_id'])
+    console.log(msg['roomname'])
     if (msg.user_id != $('.user_id').text()) {
         $('.msger-chat').append(`<div class="msg left-msg">
       <div
