@@ -12,7 +12,7 @@ socket.on('connect', function() {
         let roomname = document.domain;
         const currentDate = new Date();
         socket.emit('my event', {
-            roomname: roomname
+            roomname: roomname,
             message: message,
             date: currentDate.toString(),
             user_id: user_id,

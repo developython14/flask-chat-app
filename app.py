@@ -14,7 +14,7 @@ app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
-@app.route("/")
+@app.route("/mohammed")
 def hello_world():
     db.messages.insert_one({'title': "todo title", 'body': "todo body"})
     return render_template('testing.html')
