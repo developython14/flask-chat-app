@@ -73,7 +73,7 @@
                 </div>
             </li>
             <li class="list-group-item  d-flex p-2  align-items-center "> <img src="https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1" alt="Avatar" class="avatar ms-2 me-4">
-                <div class="col">
+                <div class="col d-flex flex-column d-flex flex-row align-self-start">
                     <div class="row"><a href="">Mustapha algeria</a></div>
                     <div class="row status">
                         status</div>
@@ -146,6 +146,15 @@
         <p class="user_id">{{ session['userid']}}</p>
         <p class="image_url">{{ session['image_url']}}</p>
         <i class="fa-solid fa-french-fries"></i>
+    </div>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+          The current button
+        </button>
+        <button type="button" class="list-group-item list-group-item-action">A second button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A third button item</button>
+        <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+        <button type="button" class="list-group-item list-group-item-action" disabled>A disabled button item</button>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

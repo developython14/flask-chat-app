@@ -224,14 +224,6 @@ html {
     background: blue;
 }
 
-a:hover {
-    color: rgba(236, 27, 27, 0.432);
-}
-
-a:active {
-    color: green;
-}
-
 .list-group-item:hover {
     background-color: rgb(89, 89, 241);
     color: wheat;
@@ -248,4 +240,9 @@ a:active {
 .status {
     color: green;
     font-weight: bold;
+}
+
+a:active .list-group-item {
+    background-color: rgb(89, 89, 241);
+    color: wheat;
 }
