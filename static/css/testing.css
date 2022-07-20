@@ -223,3 +223,7 @@ html {
     width: 110px;
     background: blue;
 }
+
+a {
+    text-decoration: none;
+}
