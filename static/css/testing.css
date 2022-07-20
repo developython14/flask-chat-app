@@ -242,7 +242,7 @@ html {
     font-weight: bold;
 }
 
-a:active .list-group-item {
+a:active .iden {
     background-color: rgb(89, 89, 241);
     color: wheat;
 }
