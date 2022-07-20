@@ -9,7 +9,7 @@ socket.on('connect', function() {
         let message = $('input.msger-input').val()
         let user_id = $('.user_id').text()
         let username = $('.username').text()
-        let roomname = document.domain;
+        let roomname = document.location.href.slice(22);
         const currentDate = new Date();
         socket.emit('my event', {
             roomname: roomname,
