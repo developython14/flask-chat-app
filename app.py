@@ -16,8 +16,10 @@ db = mongodb_client.db
 
 @app.route("/mohammed")
 def hello_world():
-    db.messages.insert_one({'title': "todo title", 'body': "todo body"})
-    return render_template('testing.html')
+    last_messages = db.messages.find({'roomname': "mohammed"})
+    last_messages = list(last_messages)
+    db.messages.delete_many({})
+    return render_template('testing.html' , last_messages =last_messages )
 
 
 

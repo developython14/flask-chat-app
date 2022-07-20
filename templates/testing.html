@@ -130,6 +130,36 @@
             </header>
 
             <main class="msger-chat">
+                {% for message in last_messages %}
+                <div class="msg right-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">{{message.username}}</div>
+                            <div class="msg-info-time">{{message.date[16:20]}}]</div>
+                        </div>
+
+                        <div class="msg-text">
+                            {{message.message}}
+                        </div>
+                    </div>
+                </div>
+                <div class="msg right-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">{{message.username}}</div>
+                            <div class="msg-info-time">{{message.date[16:21]}}</div>
+                        </div>
+
+                        <div class="msg-text">
+                            {{message.message}}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
 
             </main>
 
@@ -141,6 +171,7 @@
     </div>
 
     <div class="iden">
+
         <p class="username">{{ session['username']}}</p>
         <p class="user_id">{{ session['userid']}}</p>
         <p class="image_url">{{ session['image_url']}}</p>
