@@ -30,6 +30,7 @@ socket.on('connect', function() {
 
 
 socket.on('my response', function(msg) {
+    console.log(msg['_id'])
     if (msg.user_id != $('.user_id').text()) {
         $('.msger-chat').append(`<div class="msg left-msg">
       <div
