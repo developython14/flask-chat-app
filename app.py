@@ -57,7 +57,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     db.messages.insert_one(json)
     print('aperss',json)
-    json['_id'] = 'algeria'
+    json['_id'] = str(json['_id'])
     socketio.emit('my response', json, callback=messageReceived)
 
 @socketio.on('connection')

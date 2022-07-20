@@ -19,9 +19,9 @@ socket.on('connect', function() {
         $('input.msger-input').val('').focus()
         let items = document.querySelectorAll(".msg");
         last = items[items.length - 1];
-        last.scrollIntoView();
+        let ref = items.length;
         if (ref > 0) {
-            document.getElementsByClassName('msg').item(ref - 1).focus();
+            last.scrollIntoView();
         }
     })
     var inn = $('input.msger-input').on('focus', function(e) {})
@@ -132,4 +132,4 @@ async function changegrid() {
 function checkAdult(car) {
     var _filter = document.querySelector('.form-control').value;
     return car.name.toUpperCase().includes(_filter.toUpperCase());
-}
+};
