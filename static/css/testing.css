@@ -224,6 +224,19 @@ html {
     background: blue;
 }
 
-a {
-    text-decoration: none;
+a:hover {
+    color: rgba(236, 27, 27, 0.432);
+}
+
+a:active {
+    color: green;
+}
+
+.iden {
+    background-color: red;
+    color: #666;
+}
+
+.iden:hover {
+    background-color: #579ffb;
 }
