@@ -14,7 +14,7 @@ app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
-@app.route("/mohammed")
+@app.route("/mohammed/<username>")
 def hello_world():
     last_messages = db.messages.find({'roomname': "mohammed"})
     last_messages = list(last_messages)
