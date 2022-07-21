@@ -170,12 +170,25 @@
     </div>
 
     <div class="iden">
+        <div class="msg left-msg">
+            <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
 
+            <div class="msg-bubble">
+                <div class="msg-info">
+                    <div class="msg-info-name">${msg.username}</div>
+                    <div class="msg-info-time">${msg.date.slice(16,21)}</div>
+                </div>
+
+                <div class="msg-text">
+                    ${msg.message}
+                </div>
+            </div>
+        </div>
         <p class="username">{{ session['username']}}</p>
         <p class="user_id">{{ session['userid']}}</p>
         <p class="image_url">{{ session['image_url']}}</p>
         <i class="fa-solid fa-french-fries"></i>
-        <div class="video_message"><video src="../static/videos/mesh3d.m4v" controls>free</video></div>
+        <video src="../static/videos/mesh3d.m4v" controls>free</video>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

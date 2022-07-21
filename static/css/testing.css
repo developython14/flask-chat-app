@@ -247,7 +247,7 @@ a:active .iden {
     color: wheat;
 }
 
-.video_message {
-    width: 200px;
+video {
+    width: 300px;
     height: 200px;
 }
