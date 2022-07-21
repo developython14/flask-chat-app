@@ -15,12 +15,18 @@ mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
 @app.route("/mohammed/<username>")
-def hello_world():
+def hello_world(username):
     last_messages = db.messages.find({'roomname': "mohammed"})
     last_messages = list(last_messages)
     db.messages.delete_many({})
     return render_template('testing.html' , last_messages =last_messages )
 
+@app.route("/mohammed/<username>")
+def secretdiss(username):
+    last_messages = db.messages.find({'roomname': "mohammed"})
+    last_messages = list(last_messages)
+    db.messages.delete_many({})
+    return render_template('testing.html' , last_messages =last_messages )
 
 
 @app.route("/introscreen" ,methods=['GET', 'POST'] )
