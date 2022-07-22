@@ -4,6 +4,13 @@ from flask_socketio import SocketIO
 from math import * 
 from flask_bcrypt import Bcrypt
 from flask_pymongo import PyMongo
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+f = Fernet(key)
+
+
+
 
 
 app = Flask(__name__)
@@ -13,6 +20,12 @@ socketio = SocketIO(app)
 app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz4o7.mongodb.net/mustapha?retryWrites=true&w=majority"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
+
+@app.route("/<mus>")
+def gettest(mus):
+    encrypted_data = f.encrypt(mus)
+    decrypted_data = f.decrypt(encrypted_data)
+    return 'encrepteis ius {x} and data is {y}'.format(x = encrypted_data,y =decrypted_data )
 
 @app.route("/mohammed")
 def hello_world():
