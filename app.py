@@ -30,17 +30,23 @@ def gettest(mus):
     print(decrypted_data)
     return 'encrepteis ius {} and data is {}'.format( encrypted_data,decrypted_data )
 
-@app.route("/mohammed")
-def hello_world():
+@app.route("/chat/u/<hash>")
+def hello_world(hash):
+    print(hash)
     last_messages = db.messages.find({'roomname': "mohammed"})
     last_messages = list(last_messages)
     db.messages.delete_many({})
     return render_template('testing.html' , last_messages =last_messages )
 
-@app.route("/mohammed/<username>")
+@app.route("/chat/<username>")
 def secretdiss(username):
-    hashed_password = bcrypt.generate_password_hash(username).decode('utf-8')
-    return redirect( url_for('introscreen'))
+    user_id = session['userid']
+    if not db.rooms.find({'users_id': [user_id,username]}) :
+        db.messages.insert_one({'users_id': [user_id,username]})
+    hashed = db.messages.find({'users_id': [user_id,username]})
+    print(list(hashed))
+    hashed='55'
+    return redirect( url_for('hello_world',has =hashed))
 
 
 @app.route("/introscreen" ,methods=['GET', 'POST'] )
