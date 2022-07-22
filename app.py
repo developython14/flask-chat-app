@@ -1,4 +1,5 @@
 from tokenize import Double
+from bson import ObjectId
 from flask import Flask,render_template,request,jsonify,url_for,redirect,session
 from flask_socketio import SocketIO
 from math import * 
@@ -32,10 +33,7 @@ def gettest(mus):
 
 @app.route("/chat/u/<hash>")
 def hello_world(hash):
-    print( "hada hash",hash)
-    ref = db.rooms.find({'_id':object(hash)})
-    print(list(ref))
-    last_messages = db.messages.find({'roomname': "mohammed"})
+    last_messages = db.messages.find({'roomname':hash})
     last_messages = list(last_messages)
     db.messages.delete_many({})
     return render_template('testing.html' , last_messages =last_messages )
@@ -43,10 +41,10 @@ def hello_world(hash):
 @app.route("/chat/<username>")
 def secretdiss(username):
     user_id = session['userid']
-    hashed = db.rooms.find({'users_id': [user_id,username]})
+    hashed = db.rooms.find({'users_id': {user_id,username}})
     if len(list(hashed))==0:
-        db.rooms.insert_one({'users_id': [user_id,username]})
-    hashed = db.rooms.find({'users_id': [user_id,username]})
+        db.rooms.insert_one({'users_id': {user_id,username}})
+    hashed = db.rooms.find({'users_id': {user_id,username}})
     hashed = list(hashed)[0]['_id']
     hashed = str(hashed)
     return redirect( url_for('hello_world',hash =hashed))
