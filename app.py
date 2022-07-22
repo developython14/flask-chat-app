@@ -24,7 +24,7 @@ def hello_world():
 @app.route("/mohammed/<username>")
 def secretdiss(username):
     hashed_password = bcrypt.generate_password_hash(username).decode('utf-8')
-    return hashed_password
+    return redirect( url_for('introscreen'))
 
 
 @app.route("/introscreen" ,methods=['GET', 'POST'] )
