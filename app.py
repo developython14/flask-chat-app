@@ -33,6 +33,8 @@ def gettest(mus):
 @app.route("/chat/u/<hash>")
 def hello_world(hash):
     print( "hada hash",hash)
+    ref = db.rooms.find({'_id':object(hash)})
+    print(list(ref))
     last_messages = db.messages.find({'roomname': "mohammed"})
     last_messages = list(last_messages)
     db.messages.delete_many({})
