@@ -15,7 +15,7 @@ socket.on('connect', function() {
             roomname: roomname,
             message: message,
             date: currentDate.toString(),
-            user_id: user_id,
+            user_id: parseInt(user_id),
             username: username,
         })
         $('input.msger-input').val('').focus()
@@ -32,8 +32,8 @@ socket.on('connect', function() {
 
 
 socket.on('my response', function(msg) {
-    console.log(msg['roomname'])
-    if (msg.user_id != $('.user_id').text()) {
+
+    if (parseInt(msg.user_id) != parseInt($('.user_id').text())) {
         $('.msger-chat').append(`<div class="msg left-msg">
       <div
        class="msg-img"
@@ -134,4 +134,4 @@ async function changegrid() {
 function checkAdult(car) {
     var _filter = document.querySelector('.form-control').value;
     return car.name.toUpperCase().includes(_filter.toUpperCase());
-};
+}

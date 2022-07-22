@@ -35,7 +35,9 @@ def gettest(mus):
 def hello_world(hash):
     last_messages = db.messages.find({'roomname':hash})
     last_messages = list(last_messages)
-    return render_template('testing.html' , last_messages =last_messages )
+    userid =  int(session['userid'])
+    print(last_messages[-1]['user_id']==userid)
+    return render_template('testing.html' , userid = userid,last_messages =last_messages )
 
 @app.route("/chat/<username>")
 def secretdiss(username):
