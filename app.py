@@ -32,7 +32,7 @@ def gettest(mus):
 
 @app.route("/chat/u/<hash>")
 def hello_world(hash):
-    print(hash)
+    print( "hada hash",hash)
     last_messages = db.messages.find({'roomname': "mohammed"})
     last_messages = list(last_messages)
     db.messages.delete_many({})
@@ -41,12 +41,13 @@ def hello_world(hash):
 @app.route("/chat/<username>")
 def secretdiss(username):
     user_id = session['userid']
-    if not db.rooms.find({'users_id': [user_id,username]}) :
-        db.messages.insert_one({'users_id': [user_id,username]})
-    hashed = db.messages.find({'users_id': [user_id,username]})
-    print(list(hashed))
-    hashed='55'
-    return redirect( url_for('hello_world',has =hashed))
+    hashed = db.rooms.find({'users_id': [user_id,username]})
+    if len(list(hashed))==0:
+        db.rooms.insert_one({'users_id': [user_id,username]})
+    hashed = db.rooms.find({'users_id': [user_id,username]})
+    hashed = list(hashed)[0]['_id']
+    hashed = str(hashed)
+    return redirect( url_for('hello_world',hash =hashed))
 
 
 @app.route("/introscreen" ,methods=['GET', 'POST'] )
