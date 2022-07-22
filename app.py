@@ -23,9 +23,12 @@ db = mongodb_client.db
 
 @app.route("/<mus>")
 def gettest(mus):
+    mus= bytes(mus)
     encrypted_data = f.encrypt(mus)
     decrypted_data = f.decrypt(encrypted_data)
-    return 'encrepteis ius {x} and data is {y}'.format(x = encrypted_data,y =decrypted_data )
+    print(encrypted_data)
+    print(decrypted_data)
+    return 'encrepteis ius {} and data is {}'.format( encrypted_data,decrypted_data )
 
 @app.route("/mohammed")
 def hello_world():
