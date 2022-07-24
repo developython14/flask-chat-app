@@ -1,4 +1,4 @@
-var socket = io.connect(window.location.href);
+var socket = io.connect(window.location.href + ':' + location.port);
 console.log("hada parth socktet");
 console.log('http://' + document.domain + ':' + location.port);
 socket.on('connect', function() {
