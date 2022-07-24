@@ -183,6 +183,9 @@
 
                         <div class="msg-text">
                             <img src="{{url_for('static' , filename = 'images/algeriaflag.jpg')}}" alt="">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <ion-icon name="caret-forward-circle-outline"></ion-icon>
+                              </button>
                         </div>
                     </div>
                 </div>
@@ -246,12 +249,10 @@
         <p class="image_url">{{ session['image_url']}}</p>
         <i class="fa-solid fa-french-fries"></i>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
+
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
