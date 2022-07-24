@@ -84,8 +84,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
     space = "http://127.0.0.1:5000/chat/u/"+json['roomname']
-    print(space)
-    socketio.emit('my response', json, callback=messageReceived ,namespace=space)
+    socketio.emit('my response', json, callback=messageReceived)
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
