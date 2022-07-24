@@ -1,5 +1,4 @@
-var socket = io.connect("http://127.0.0.1:5000/chat/u/62dd5c7ceeb1a331b5e01bf2");
-
+var socket = io.connect('http://' + document.domain + ':' + location.port);
 
 socket.on('connect', function() {
     socket.emit('connection', {

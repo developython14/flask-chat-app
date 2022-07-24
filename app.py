@@ -79,8 +79,9 @@ def filter_with_ajax():
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
-@socketio.on('my event' , namespace="http://127.0.0.1:5000/chat/u/62dd5c7ceeb1a331b5e01bf2")
+@socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print("message recived by backend")
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
     space = "http://127.0.0.1:5000/chat/u/"+json['roomname']
