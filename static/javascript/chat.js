@@ -1,6 +1,6 @@
 var socket = io.connect(window.location.href + ':' + location.port);
 console.log("hada parth socktet");
-console.log('http://' + document.domain + ':' + location.port);
+console.log(window.location.href + ':' + location.port);
 socket.on('connect', function() {
     socket.emit('connection', {
         msg: 'User Connected',
