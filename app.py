@@ -1,3 +1,4 @@
+from argparse import Namespace
 from tokenize import Double
 from bson import ObjectId
 from flask import Flask,render_template,request,jsonify,url_for,redirect,session
@@ -82,10 +83,10 @@ def messageReceived(methods=['GET', 'POST']):
 @socketio.on('my event' , namespace="/chat/u/62dd5c7ceeb1a331b5e01bf2")
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print("message recived by backend")
+    print(json)
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
-    space = "http://127.0.0.1:5000/chat/u/"+json['roomname']
-    socketio.emit('my response', json, callback=messageReceived)
+    socketio.emit('my response', json, callback=messageReceived, namespace="/chat/u/62dd5c7ceeb1a331b5e01bf2") 
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):

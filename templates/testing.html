@@ -130,7 +130,77 @@
             </header>
 
             <main class="msger-chat">
+                <div class="msg left-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">allo guerie</div>
+                            <div class="msg-info-time">16855225</div>
+                        </div>
+
+                        <div class="msg-text">
+                            <video src="{{url_for('static' , filename = 'videos/mesh3d.m4v')}}" controls>free</video>
+                        </div>
+                    </div>
+                </div>
+                <div class="msg right-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">allo guerie</div>
+                            <div class="msg-info-time">16855225</div>
+                        </div>
+
+                        <div class="msg-text">
+                            <video src="{{url_for('static' , filename = 'videos/mesh3d.m4v')}}" controls>free</video>
+                        </div>
+                    </div>
+                </div>
+                <div class="msg left-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">allo guerie</div>
+                            <div class="msg-info-time">16855225</div>
+                        </div>
+
+                        <div class="msg-text">
+                            <video src="{{url_for('static' , filename = 'videos/mesh3d.m4v')}}" controls>free</video>
+                        </div>
+                    </div>
+                </div>
+                <div class="msg left-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">allo guerie</div>
+                            <div class="msg-info-time">16855225</div>
+                        </div>
+
+                        <div class="msg-text">
+                            <img src="{{url_for('static' , filename = 'images/algeriaflag.jpg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
                 {% for message in last_messages %} {% if message[user_id] == userid %}
+                <div class="msg right-msg">
+                    <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?pid=ImgDet&rs=1)"></div>
+
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">{{message.username}}</div>
+                            <div class="msg-info-time">{{message.date[16:20]}}]</div>
+                        </div>
+
+                        <div class="msg-text">
+                            {{message.message}}
+                        </div>
+                    </div>
+                </div>
                 <div class="msg right-msg">
                     <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?pid=ImgDet&rs=1)"></div>
 
@@ -170,20 +240,7 @@
     </div>
 
     <div class="iden">
-        <div class="msg left-msg">
-            <div class="msg-img" style="background-image: url(https://th.bing.com/th/id/OIP.CFYwFDlR1XWX2udq_niNGgHaLH?pid=ImgDet&rs=1)"></div>
 
-            <div class="msg-bubble">
-                <div class="msg-info">
-                    <div class="msg-info-name">allo guerie</div>
-                    <div class="msg-info-time">16855225</div>
-                </div>
-
-                <div class="msg-text">
-                    <video src="{{url_for('static' , filename = 'videos/mesh3d.m4v')}}" controls>free</video>
-                </div>
-            </div>
-        </div>
         <p class="username">{{ session['username']}}</p>
         <p class="user_id">{{ session['userid']}}</p>
         <p class="image_url">{{ session['image_url']}}</p>
