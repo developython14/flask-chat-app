@@ -28,7 +28,6 @@ def hello_world(hash):
     last_messages = db.messages.find({'roomname':hash})
     last_messages = list(last_messages)
     userid =  int(session['userid'])
-    print(last_messages[-1]['user_id']==userid)
     return render_template('testing.html' , userid = userid,last_messages =last_messages )
 
 @app.route("/chat/<username>")
@@ -86,7 +85,7 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     db.messages.insert_one(json)
     print('aperss',json)
     json['_id'] = str(json['_id'])
-    socketio.emit('my response', json, callback=messageReceived)
+    socketio.emit('my response', json, callback=messageReceived ,namespace="/"+json.roomname)
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
