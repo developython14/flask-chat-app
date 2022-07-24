@@ -82,11 +82,10 @@ def messageReceived(methods=['GET', 'POST']):
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
-    print(json)
     db.messages.insert_one(json)
-    print('aperss',json)
     json['_id'] = str(json['_id'])
-    socketio.emit('my response', json, callback=messageReceived ,namespace="http://127.0.0.1:5000/chat/u/"+json.roomname)
+    space = "http://127.0.0.1:5000/chat/u/"+json['roomname']
+    socketio.emit('my response', json, callback=messageReceived ,namespace=space)
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
