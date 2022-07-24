@@ -22,14 +22,6 @@ app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
-@app.route("/<mus>")
-def gettest(mus):
-    mus= bytes(mus)
-    encrypted_data = f.encrypt(mus)
-    decrypted_data = f.decrypt(encrypted_data)
-    print(encrypted_data)
-    print(decrypted_data)
-    return 'encrepteis ius {} and data is {}'.format( encrypted_data,decrypted_data )
 
 @app.route("/chat/u/<hash>")
 def hello_world(hash):
