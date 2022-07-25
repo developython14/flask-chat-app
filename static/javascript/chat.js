@@ -1,4 +1,4 @@
-var socket = io.connect("/chat/u/62dd5c7ceeb1a331b5e01bf2");
+var socket = io.connect();
 
 socket.on('connect', function() {
     socket.emit('connection', {

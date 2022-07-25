@@ -80,13 +80,12 @@ def filter_with_ajax():
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
-@socketio.on('my event' , namespace="/chat/u/62dd5c7ceeb1a331b5e01bf2")
+@socketio.on('my event' )
 def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print("message recived by backend")
-    print(json)
+    print("message recived by backend" , json)
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
-    socketio.emit('my response', json, callback=messageReceived, namespace="/chat/u/62dd5c7ceeb1a331b5e01bf2") 
+    socketio.emit('my response', json, callback=messageReceived) 
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
