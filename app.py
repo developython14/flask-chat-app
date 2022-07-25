@@ -95,7 +95,7 @@ def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
     room = json['roomname']
     join_room(room)
-    socketio.emit('userconnect', json, callback=messageReceived )
+    socketio.emit('userconnect', json, callback=messageReceived ,room = room)
 
 
 if __name__ == '__main__' :

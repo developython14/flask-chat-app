@@ -4,14 +4,14 @@ socket.on('connect', function() {
     socket.emit('connection', {
         msg: 'User Connected',
         user_id: $('.user_id').text(),
-        roomname = document.location.href.slice(29);
+        roomname: document.location.href.slice(29)
     })
     var form = $('.msger-inputarea').on('submit', function(e) {
         e.preventDefault()
         let message = $('input.msger-input').val()
         let user_id = $('.user_id').text()
         let username = $('.username').text()
-        let roomname = document.location.href.slice(29);
+        let roomname = document.location.href.slice(29)
         const currentDate = new Date();
         socket.emit('my event', {
             roomname: roomname,
