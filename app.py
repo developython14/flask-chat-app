@@ -80,7 +80,7 @@ def filter_with_ajax():
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
-@socketio.on('my event')
+@socketio.on('my event' ,namespace='/chat')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
     print("message recived by backend" , json['roomname'])
     db.messages.insert_one(json)
