@@ -2,7 +2,7 @@ from argparse import Namespace
 from tokenize import Double
 from bson import ObjectId
 from flask import Flask,render_template,request,jsonify,url_for,redirect,session
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO , join_room, leave_room
 from math import * 
 from flask_bcrypt import Bcrypt
 from flask_pymongo import PyMongo
@@ -85,17 +85,17 @@ def handle_my_custom_event(json, methods=['GET', 'POST']):
     print("message recived by backend" , json['roomname'])
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
-    socketio.emit('my response', json, callback=messageReceived ,namespace="/chat/u/62dd5c7ceeb1a331b5e01bf2")
+    room = json['roomname']
+    socketio.emit('my response', json, callback=messageReceived ,room=room)
+
+
 
 @socketio.on('connection')
 def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
     print('received my event: ' + str(json))
-    socketio.emit('userconnect', json, callback=messageReceived)
-
-@socketio.on('connection')
-def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
-    print('received my event: ' + str(json))
-    socketio.emit('userconnect', json, callback=messageReceived)
+    room = json['roomname']
+    join_room(room)
+    socketio.emit('userconnect', json, callback=messageReceived )
 
 
 if __name__ == '__main__' :

@@ -4,6 +4,7 @@ socket.on('connect', function() {
     socket.emit('connection', {
         msg: 'User Connected',
         user_id: $('.user_id').text(),
+        roomname = document.location.href.slice(29);
     })
     var form = $('.msger-inputarea').on('submit', function(e) {
         e.preventDefault()
