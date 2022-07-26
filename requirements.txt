@@ -7,6 +7,7 @@ cryptography==37.0.4
 dnspython==2.2.1
 Flask==2.1.2
 Flask-Bcrypt==1.0.1
+Flask-Cors==3.0.10
 Flask-PyMongo==2.3.0
 Flask-SocketIO==5.2.0
 itsdangerous==2.1.2
@@ -16,4 +17,5 @@ pycparser==2.21
 pymongo==4.2.0
 python-engineio==4.3.3
 python-socketio==5.7.0
+six==1.16.0
 Werkzeug==2.1.2
