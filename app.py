@@ -75,7 +75,9 @@ def filter_api():
 def filter_with_ajax():
     return render_template('filter_with_ajax.html')
 
-
+@app.route("/")
+def start():
+    return 'you are welecme bro'
 
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
