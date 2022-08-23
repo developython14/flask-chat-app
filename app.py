@@ -16,7 +16,7 @@ f = Fernet(key)
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
+app.config['SECRET_KEY'] = 'ssecret!'
 bcrypt = Bcrypt(app)
 socketio = SocketIO(app)
 app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz4o7.mongodb.net/mustapha?retryWrites=true&w=majority"
