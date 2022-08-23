@@ -19,6 +19,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ssecret!'
 bcrypt = Bcrypt(app)
 socketio = SocketIO(app)
+socketio.init_app(app, cors_allowed_origins="*")
 app.config["MONGO_URI"] = "mongodb+srv://mustapha31:L01FRcNEVjpBtfGd@cluster0.oz4o7.mongodb.net/mustapha?retryWrites=true&w=majority"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
