@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-    socket.on('connect', function() {
+var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+socket.on('connect', function() {
         socket.emit('connection', {
             msg: 'User Connected',
             user_id: $('.user_id').text(),
@@ -138,5 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return car.name.toUpperCase().includes(_filter.toUpperCase());
     }
 
-});
 
