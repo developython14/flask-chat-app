@@ -101,4 +101,4 @@ def handle_my_custom_event_connect(json, methods=['GET', 'POST']):
 
 
 if __name__ == '__main__' :
-    socketio.run(app)
+    app.run()
