@@ -84,7 +84,7 @@ def messageReceived(methods=['GET', 'POST']):
 
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print("message recived by backend" , json['roomname'])
+    print('messag rah wsel ' , json['message'])
     db.messages.insert_one(json)
     json['_id'] = str(json['_id'])
     room = json['roomname']
