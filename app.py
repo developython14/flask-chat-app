@@ -2,7 +2,7 @@ from argparse import Namespace
 from tokenize import Double
 from bson import ObjectId
 from flask import Flask,render_template,request,jsonify,url_for,redirect,session
-from flask_socketio import SocketIO , join_room, leave_room
+from flask_socketio import SocketIO , join_room
 from math import * 
 from flask_bcrypt import Bcrypt
 from flask_pymongo import PyMongo
@@ -10,9 +10,6 @@ from cryptography.fernet import Fernet
 
 key = Fernet.generate_key()
 f = Fernet(key)
-
-
-
 
 
 app = Flask(__name__)
